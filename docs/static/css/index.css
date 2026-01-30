@@ -67,6 +67,66 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+/* Key Contributions Boxes */
+.box {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  height: 100%;
+  padding: 1.5rem;
+  background: var(--background-primary);
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.box .title.is-5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Results Table Styling */
+.table-container {
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden; /* Ensures rounded corners clip the table */
+  border: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+.table {
+  margin-bottom: 0 !important; /* Remove bottom margin inside container */
+  background-color: var(--background-primary);
+}
+
+.table thead th {
+  background-color: var(--background-accent);
+  color: var(--text-primary);
+  border-bottom-width: 2px;
+  border-color: var(--border-color);
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.table th, .table td {
+  border-color: var(--border-color);
+  vertical-align: middle;
+  padding: 0.75rem 1rem;
+}
+
+.table tr.selected-row {
+  background-color: #f0f9ff !important; /* Light blue highlight */
+  font-weight: 600;
+}
+
+.table tr:hover {
+  background-color: var(--background-accent);
+}
+
 .footer .icon-link {
     font-size: 25px;
     color: var(--text-secondary);
@@ -737,11 +797,11 @@ a:focus {
   .more-works-container {
     display: none;
   }
-  
+
   .hero, .section {
     animation: none;
   }
-  
+
   .button {
     background: transparent !important;
     color: var(--text-primary) !important;
@@ -749,5 +809,312 @@ a:focus {
   }
 }
 
+/* Analysis Carousel Styles */
+.carousel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  height: 400px; /* Fixed height to prevent layout shifts */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
 
+.carousel-image-container:hover {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 0 0 1px var(--primary-color-light);
+}
 
+.carousel-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05)); /* Subtle lift */
+}
+
+.carousel-image-container.wide {
+  height: 400px; /* Consistent height even for 'wide' marked items */
+}
+
+.carousel-image-container.wide img {
+  max-height: 100%;
+}
+
+.carousel-caption {
+  text-align: center;
+  margin-top: 1.25rem;
+  padding: 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  min-height: 3rem; /* Reserve space for 2 lines of text */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.carousel-caption strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+#analysis-carousel .item {
+  background: var(--background-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid var(--border-color);
+  height: 100%; /* Fill slide height */
+  display: flex;
+  flex-direction: column;
+}
+
+#analysis-carousel .item:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-image-container {
+    height: 300px;
+    padding: 1rem;
+  }
+
+  .carousel-image-container.wide {
+    height: 300px;
+  }
+
+  .carousel-caption {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Carousel Table Styles */
+.carousel-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  height: 400px;
+  width: 100%;
+  overflow-x: auto;
+  transition: var(--transition);
+}
+
+.carousel-table-container:hover {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 0 0 1px var(--primary-color-light);
+}
+
+.carousel-table {
+  width: 100%;
+  font-size: 0.85rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.carousel-table th,
+.carousel-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.carousel-table th {
+  background-color: var(--background-accent);
+  font-weight: 600;
+  color: var(--text-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+.carousel-table th:first-child {
+  border-top-left-radius: 8px;
+  border-left: 1px solid var(--border-color);
+}
+
+.carousel-table th:last-child {
+  border-top-right-radius: 8px;
+  border-right: 1px solid var(--border-color);
+}
+
+.carousel-table td:first-child {
+  border-left: 1px solid var(--border-color);
+  text-align: left;
+  font-weight: 500;
+}
+
+.carousel-table td:last-child {
+  border-right: 1px solid var(--border-color);
+}
+
+.carousel-table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.carousel-table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.carousel-table .highlight-row {
+  background-color: #f0f9ff;
+  font-weight: 700;
+}
+
+.carousel-table .sub-header {
+  background-color: #f8fafc;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+/* Qualitative Case Studies in Carousel */
+.carousel-case-container {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  height: 880px; /* Taller for detailed reasoning cases */
+  width: 100%;
+  overflow: hidden; /* Let the content column handle scrolling (avoid nested scrollbars). */
+  gap: 1.5rem;
+  transition: var(--transition);
+}
+
+.carousel-case-container:hover {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 0 0 1px var(--primary-color-light);
+}
+
+.case-image {
+  flex: 0 0 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-accent);
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+}
+
+.case-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.case-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  overflow-y: auto; /* Single scrollbar lives here. */
+  min-height: 0; /* Allow inner flex children to scroll instead of stretching. */
+}
+
+.case-question {
+  background: var(--background-accent);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.case-comparison {
+  display: flex;
+  flex-direction: row; /* Side-by-side model outputs on desktop */
+  align-items: flex-start; /* Let each response box grow with its content. */
+  gap: 1rem;
+}
+
+.case-response {
+  flex: 1;
+  min-width: 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.case-response.baseline {
+  background-color: #fff7ed; /* Light orange */
+  border-color: #fdba74;
+}
+
+.case-response.ours {
+  background-color: #f0fdf4; /* Light green */
+  border-color: #86efac;
+}
+
+.case-response p {
+  /* Backward-compat: older markup used <p> for case text. */
+  white-space: pre-wrap;
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.case-question pre,
+.case-response pre {
+  white-space: pre-wrap; /* Preserve line breaks from the paper. */
+  font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  /*
+    Override the global BibTeX <pre> styling above (uses !important).
+    For cases, we want the surrounding container's background to show through.
+  */
+  background: transparent !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin: 0;
+}
+
+.case-response strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-case-container {
+    flex-direction: column;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto; /* Mobile: scroll the whole case card. */
+    overflow-x: hidden;
+  }
+
+  .case-content {
+    overflow-y: visible; /* Avoid nested scrollbars on mobile. */
+  }
+
+  .case-comparison {
+    flex-direction: column;
+  }
+  
+  .case-image {
+    flex: 0 0 200px;
+  }
+}
